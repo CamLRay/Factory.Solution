@@ -1,0 +1,10 @@
+@{
+  Layout="_Layout";
+}
+
+@model Factory.Models.Machine;
+
+<h3>@Html.DisplayNameFor(m => m.Name): @Html.DisplayFor(m => m.Name)</h3>
+
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.MachineId }, new { @Class = "btn btn-primary"})</p>
+<p>@Html.ActionLink("Delete", "Delete", new { id = Model.MachineId }, new { @Class = "btn btn-primary"})</p>
