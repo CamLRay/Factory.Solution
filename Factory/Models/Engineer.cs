@@ -8,7 +8,7 @@ namespace Factory.Models
     {
         public Engineer()
         {
-            this.JoinEntities = new HashSet<MachineEngineer>();
+            this.Certifications = new HashSet<MachineEngineer>();
         }
 
         public int EngineerId { get; set; }
@@ -19,6 +19,6 @@ namespace Factory.Models
         public DateTime StartDate { get; set; }
         
 
-        public virtual ICollection<MachineEngineer> JoinEntities { get;}
+        public virtual ICollection<MachineEngineer> Certifications { get;}
     }
 }

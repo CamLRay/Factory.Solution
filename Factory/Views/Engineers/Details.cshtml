@@ -5,5 +5,8 @@
 @model Factory.Models.Engineer;
 
 <h3>@Html.DisplayNameFor(m => m.Name): @Html.DisplayFor(m => m.Name)</h3>
+<h3>@Html.DisplayNameFor(m => m.JobTitle): @Html.DisplayFor(m => m.JobTitle)</h3>
+<h3>@Html.DisplayNameFor(m => m.StartDate): @Html.DisplayFor(m => m.StartDate)</h3>
 
-
+<p>@Html.ActionLink("Edit", "Edit", new { id = Model.EngineerId }, new { @Class = "btn btn-primary"})</p>
+<p>@Html.ActionLink("Delete", "Delete", new { id = Model.EngineerId }, new { @Class = "btn btn-primary"})</p>
