@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System;
 
 namespace Factory.Models
@@ -12,6 +13,7 @@ namespace Factory.Models
 
         public int EngineerId { get; set; }
         public string Name { get; set; }
+        [Display(Name = "Job Title")]
         public string JobTitle { get; set; }
         public DateTime StartDate { get; set; }
         
