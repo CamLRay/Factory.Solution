@@ -6,5 +6,22 @@
 
 <h3>@Html.DisplayNameFor(m => m.Name): @Html.DisplayFor(m => m.Name)</h3>
 
-<p>@Html.ActionLink("Edit", "Edit", new { id = Model.MachineId }, new { @Class = "btn btn-primary"})</p>
-<p>@Html.ActionLink("Delete", "Delete", new { id = Model.MachineId }, new { @Class = "btn btn-primary"})</p>
+@if(@Model.Certifications.Count == 0)
+{
+  <p>No one is certified to use this machine</p>
+}
+else
+{
+  <h4>@Html.DisplayFor(m => m.Name)'s certified Engineers:</h4>
+  <section>
+  @foreach(var join in Model.Certifications)
+  {
+    <p>@Html.ActionLink($"{join.Engineer.Name}", "Details", "Engineers", new { id = join.Engineer.EngineerId })</p>
+  }
+  </section>
+}
+
+<nav>
+  <p>@Html.ActionLink("Edit", "Edit", new { id = Model.MachineId }, new { @Class = "btn btn-primary"})</p>
+  <p>@Html.ActionLink("Delete", "Delete", new { id = Model.MachineId }, new { @Class = "btn btn-primary"})</p>
+</nav>

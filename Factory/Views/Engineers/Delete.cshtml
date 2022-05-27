@@ -7,6 +7,6 @@
 
 @using (Html.BeginForm())
 {
-  <input type="submit" value="Delete" />
+  <input type="submit" value="Delete" Class="btn btn-danger" />
 }
 <p>@Html.ActionLink("Cancel", "Details", new { id = Model.EngineerId }, new { @Class = "btn btn-primary"})</p>

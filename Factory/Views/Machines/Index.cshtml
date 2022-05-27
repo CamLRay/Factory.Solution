@@ -12,13 +12,13 @@
   <h3>No Machines in the system</h3>
 }
 
-<section>
+<ul>
 
   @foreach (Machine machine in Model)
   {
       <li>@Html.ActionLink($"{machine.Name}", "Details", new { id = machine.MachineId })</li>
   }
   
-</section>
+</ul>
 
 @Html.ActionLink("Add Machine", "Create", "Machines", null, new { @Class = "btn btn-primary"} )

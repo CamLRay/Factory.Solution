@@ -15,3 +15,16 @@
   @Html.EditorFor(model => model.StartDate)
   <input type="submit" value="Save Changes">
 }
+
+<h4>@Html.DisplayFor(m => m.Name)'s Machine Certifications:</h4>
+  <section>
+  @foreach(var join in Model.Certifications)
+  {
+    <p>@Html.ActionLink($"{join.Machine.Name}", "Details", "Machines", new { id = join.Machine.MachineId })</p>
+    @using (Html.BeginForm("DeleteMachine", "Engineers"))
+      {
+        @Html.Hidden("joinId", @join.MachineEngineerId)
+        <input type="submit" value="Delete" class="btn btn-primary"/>
+      }
+  }
+  </section>

@@ -2,11 +2,29 @@
   Layout="_Layout";
 }
 
-@model Factory.Models.Engineer;
+@model Factory.Models.Engineer
 
 <h3>@Html.DisplayNameFor(m => m.Name): @Html.DisplayFor(m => m.Name)</h3>
 <h3>@Html.DisplayNameFor(m => m.JobTitle): @Html.DisplayFor(m => m.JobTitle)</h3>
 <h3>@Html.DisplayNameFor(m => m.StartDate): @Html.DisplayFor(m => m.StartDate)</h3>
 
-<p>@Html.ActionLink("Edit", "Edit", new { id = Model.EngineerId }, new { @Class = "btn btn-primary"})</p>
-<p>@Html.ActionLink("Delete", "Delete", new { id = Model.EngineerId }, new { @Class = "btn btn-primary"})</p>
+@if(@Model.Certifications.Count == 0)
+{
+  <p>This engineer does not contain any certs</p>
+}
+else
+{
+  <h4>@Html.DisplayFor(m => m.Name)'s Machine Certifications:</h4>
+  <section>
+  @foreach(var join in Model.Certifications)
+  {
+    <p>@Html.ActionLink($"{join.Machine.Name}", "Details", "Machines", new { id = join.Machine.MachineId })</p>
+  }
+  </section>
+}
+
+<nav>
+  <p>@Html.ActionLink("Edit", "Edit", new { id = Model.EngineerId }, new { @Class = "btn btn-primary"})</p>
+  <p>@Html.ActionLink("Delete", "Delete", new { id = Model.EngineerId }, new { @Class = "btn btn-primary"})</p>
+  <p>@Html.ActionLink("Add New Certification", "AddMachine", new { id = Model.EngineerId}, new { @Class = "btn btn-primary"})</p>
+</nav>
