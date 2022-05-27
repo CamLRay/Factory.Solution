@@ -15,6 +15,7 @@ namespace Factory.Models
         public string Name { get; set; }
         [Display(Name = "Job Title")]
         public string JobTitle { get; set; }
+        [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
         
 
