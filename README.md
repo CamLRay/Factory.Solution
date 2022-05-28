@@ -30,7 +30,7 @@ $ cd Factory/
 $ touch appsettings.json
 ```
 * Add the following to the appsettings.json file with the bracketed username and password replaced with your mysql username and password.
-```
+```JSON
 {
   "ConnectionStrings": {
       "DefaultConnection": "Server=localhost;Port=3306;database=cameron_ray;uid=[username];pwd=[password];"
