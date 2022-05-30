@@ -17,14 +17,16 @@
 }
 
 <h4>@Html.DisplayFor(m => m.Name)'s Machine Certifications:</h4>
-  <section>
+  <section class="engineer-cert">
   @foreach(var join in Model.Certifications)
   {
-    <p>@Html.ActionLink($"{join.Machine.Name}", "Details", "Machines", new { id = join.Machine.MachineId })</p>
-    @using (Html.BeginForm("DeleteMachine", "Engineers"))
-      {
-        @Html.Hidden("joinId", @join.MachineEngineerId)
-        <input type="submit" value="Delete" class="btn btn-primary"/>
-      }
+    
+      <p>@Html.ActionLink($"{join.Machine.Name}", "Details", "Machines", new { id = join.Machine.MachineId }, new { @Class = "btn btn-primary"})</p>
+      @using (Html.BeginForm("DeleteMachine", "Engineers"))
+        {
+          @Html.Hidden("joinId", @join.MachineEngineerId)
+          <input type="submit" value="X" class="btn btn-danger btn-machine-small"/>
+        }
+    
   }
   </section>

@@ -1,10 +1,58 @@
+body {
+	padding: 5px;
+}
+.content {
+	margin-top: 0px;
+	margin-left: 1rem;
+	background-color: rgb(189, 189, 189);
+	padding: 5px;
+}
+
 .navbar {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: left;
 	text-align: center;
+	height:fit-content;
 }
 
 nav {
 	display: flex;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.engineer-cert {
+	display: flex;
+}
+
+.btn-machine-small {
+	margin-left: 2px;
+}
+
+.btn-background {
+	background-color: rgb(122, 122, 122);
+}
+
+.active-tab {
+	background-color: rgb(189, 189, 189);
+}
+
+.no-margin {
+	padding:0;
+	margin:0;
+}
+
+.tab {
+	border-radius: 5px 5px 0 0;
+	color: black;
+	padding: 10px;
+	margin-right: 2px;
+}
+
+.tab:hover {
+	color: azure;
+	text-decoration: none;
 }

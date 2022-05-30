@@ -7,13 +7,12 @@
     <link rel="stylesheet" href="~/css/styles.css">
   </head>
   <body>
-  @*
-    @await Html.PartialAsync("Header")
-  *@
-    @await Html.PartialAsync("Navbar")
-  
-    <section class="main">
+    @*
+      @await Html.PartialAsync("Header")
+    *@
+      @await Html.PartialAsync("Navbar")
+    <div class="content">
       @RenderBody()
-    </main>
+    </div>
   </body>
 </html>

@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace Factory.Controllers
 {
@@ -8,6 +9,9 @@ namespace Factory.Controllers
       [HttpGet("/")]
       public ActionResult Index()
       {
+        ViewBag.PageTitle ="Home";
+        ViewBag.Tab="home";
+        ViewBag.DateTime= DateTime.Now;
         return View();
       }
 

@@ -19,12 +19,15 @@ namespace Factory.Controllers
     public ActionResult Index()
     {
       ViewBag.PageTitle = "Engineers";
+      ViewBag.Tab = "engineer";
       List<Engineer> model = _db.Engineers.ToList();
       return View(model);
     }
 
     public ActionResult Create()
     {
+      ViewBag.PageTitle = "New Engineer";
+      ViewBag.Tab = "engineer";
       return View();
     }
 
@@ -38,13 +41,17 @@ namespace Factory.Controllers
 
     public ActionResult Details(int id)
     {
+      ViewBag.Tab = "engineer";
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      ViewBag.PageTitle = thisEngineer.Name;
       return View(thisEngineer);
     }
 
     public ActionResult Edit(int id)
     {
+      ViewBag.Tab = "engineer";
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      ViewBag.PageTitle = "Edit " + thisEngineer.Name;
       return View(thisEngineer);
     }
 
@@ -58,7 +65,9 @@ namespace Factory.Controllers
 
     public ActionResult Delete(int id)
     {
+      ViewBag.Tab = "engineer";
       Engineer thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
+      ViewBag.PageTitle = "Delete " + thisEngineer.Name;
       return View(thisEngineer);
     }
 
@@ -73,8 +82,10 @@ namespace Factory.Controllers
 
       public ActionResult AddMachine(int id)
     {
+      ViewBag.Tab = "engineer";
       var thisEngineer = _db.Engineers.FirstOrDefault(engineer => engineer.EngineerId == id);
       ViewBag.MachineId = new SelectList(_db.Machines, "MachineId", "Name");
+      ViewBag.PageTitle = "Add Cert " + thisEngineer.Name;
       return View(thisEngineer);
     }
 
